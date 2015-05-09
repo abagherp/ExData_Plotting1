@@ -17,11 +17,10 @@ final_data <- filter(dat, Date >= start & Date < end)
 
 final_data$Time <- strptime(paste(final_data$Date,final_data$Time),"%Y-%m-%d %H:%M:%S")
 
-png(filename = "./ExData_Plotting1/plot1.png",
+png(filename = "./ExData_Plotting1/plot2.png",
     width = 480, height = 480)
-hist(final_data$Global_active_power, freq = TRUE,
-     main = "Global Active Power",col="red", 
-     xlab="Global Active Power (kilowatts)",ylim = c(0,1200))
+plot(final_data$Time,final_data$Global_active_power,
+     ylab="Global Active Power (kilowatts)",xlab="",type="l")
 dev.off()
 
 
